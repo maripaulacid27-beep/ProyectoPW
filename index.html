@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>STYLESTEP | Tu estilo, tus pasos</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fuente -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="logo">
+
+        <span class="logo-icon">
+            👟
+        </span>
+
+        <div>
+            <h1>
+                STYLE<span>STEP</span>
+            </h1>
+
+            <small>
+                TU ESTILO, TUS PASOS
+            </small>
+        </div>
+
+    </div>
+
+    <!-- MENÚ -->
+
+    <nav class="menu">
+
+        <a href="#inicio">
+            Inicio
+        </a>
+
+        <a href="#catalogo"
+           onclick="filtrarCategoria('Todos')">
+            Catálogo
+        </a>
+
+        <a href="#categorias">
+            Categorías
+        </a>
+
+        <a href="#promociones">
+            Promociones
+        </a>
+
+        <a href="#nosotros">
+            Nosotros
+        </a>
+
+        <a href="#contacto">
+            Contacto
+        </a>
+
+        <a href="seguimiento.html">
+            Mi compra
+        </a>
+
+    </nav>
+
+    <!-- ACCIONES -->
+
+    <div class="header-actions">
+
+        <button
+            class="icon-btn"
+            onclick="mostrarCuenta()"
+            title="Mi cuenta">
+            👤
+        </button>
+
+        <button
+            class="icon-btn"
+            onclick="mostrarFavoritos()"
+            title="Favoritos">
+            ♡
+            <span id="contadorFavoritos">
+                0
+            </span>
+
+        </button>
+
+        <button
+            class="cart-btn"
+            onclick="abrirCarrito()">
+            🛒
+            <span>
+                Carrito
+            </span>
+
+            <b id="contadorCarrito">
+                0
+            </b>
+
+        </button>
+
+    </div>
+
+</header>
+
+<!--HERO / INICIO-->
+
+<section class="hero" id="inicio">
+
+    <div class="hero-content">
+
+        <span class="hero-tag">
+            ✨ NUEVA TEMPORADA 2026
+        </span>
+
+        <h2>
+
+            Encuentra el par
+
+            <span>
+                perfecto
+            </span>
+
+            para ti
+
+        </h2>
+
+        <p>
+
+            Descubre nuestra colección de calzado para dama,
+            caballero, jóvenes y niños. Encuentra diferentes
+            modelos, estilos y precios en un solo lugar.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <a
+                href="#catalogo"
+                class="btn-primary"
+                onclick="filtrarCategoria('Todos')">
+
+                🛍️ Ver catálogo
+
+            </a>
+
+            <a
+                href="#promociones"
+                class="btn-secondary">
+
+                Ver promociones
+
+            </a>
+
+        </div>
+
+        <div class="hero-info">
+
+            <div>
+
+                <strong>
+                    25+
+                </strong>
+
+                <span>
+                    Productos
+                </span>
+
+            </div>
+
+            <div>
+
+                <strong>
+                    4
+                </strong>
+
+                <span>
+                    Categorías
+                </span>
+
+            </div>
+            <div>
+
+                <strong>
+                    24/7
+                </strong>
+
+                <span>
+                    Compra online
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- IMAGEN PRINCIPAL -->
+
+    <div class="hero-image">
+
+        <div class="circle circle-one"></div>
+
+        <div class="circle circle-two"></div>
+
+        <div class="shoe-card">
+
+            <span class="floating-tag">
+                🔥 Más vendido
+            </span>
+
+            <div class="shoe-placeholder">
+
+            </div>
+
+            <div class="shoe-info">
+
+                <small>
+                    STYLESTEP
+                </small>
+
+                <h3>
+                    Urban Collection
+                </h3>
+
+                <p>
+                    Desde
+                    <strong>
+                        $599
+                    </strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     CATEGORÍAS
+===================================================== -->
+
+<section
+    class="categories"
+    id="categorias">
+
+    <div class="section-title">
+
+        <span>
+            ENCUENTRA TU ESTILO
+        </span>
+
+        <h2>
+
+            Compra por
+
+            <strong>
+                categoría
+            </strong>
+
+        </h2>
+
+        <p>
+            Selecciona una categoría para mostrar únicamente
+            los productos correspondientes.
+        </p>
+
+    </div>
+
+    <div class="category-grid">
+
+        <!-- ================= DAMA ================= -->
+
+        <button
+            class="category-card category-pink"
+            onclick="filtrarCategoria('Dama')">
+
+            <div class="category-icon">
+                👠
+            </div>
+
+            <h3>
+                Dama
+            </h3>
+
+            <p>
+                Elegancia, comodidad y estilo
+                para cada ocasión.
+            </p>
+
+            <span>
+                Ver productos →
+            </span>
+
+        </button>
+
+        <!-- ================= CABALLERO ================= -->
+
+        <button
+            class="category-card category-purple"
+            onclick="filtrarCategoria('Caballero')">
+
+            <div class="category-icon">
+                👞
+            </div>
+
+            <h3>
+                Caballero
+            </h3>
+
+            <p>
+                Diseños casuales, deportivos
+                y formales.
+            </p>
+
+            <span>
+                Ver productos →
+            </span>
+
+        </button>
+
+        <!-- ================= JUVENIL ================= -->
+
+        <button
+            class="category-card category-blue"
+            onclick="filtrarCategoria('Juvenil')">
+
+            <div class="category-icon">
+                👟
+            </div>
+
+            <h3>
+                Juvenil
+            </h3>
+
+            <p>
+                Tendencias actuales para
+                complementar tu estilo.
+            </p>
+
+            <span>
+                Ver productos →
+            </span>
+
+        </button>
+
+        <!-- ================= NIÑOS ================= -->
+
+        <button
+            class="category-card category-kids"
+            onclick="filtrarCategoria('Niños')">
+
+            <div class="category-icon">
+                🧒
+            </div>
+
+            <h3>
+                Niños
+            </h3>
+
+            <p>
+                Comodidad, diversión y estilo
+                para los más pequeños.
+            </p>
+
+            <span>
+                Ver productos →
+            </span>
+
+        </button>
+
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     CATÁLOGO
+===================================================== -->
+<section
+    class="catalog-section"
+    id="catalogo">
+
+
+    <div class="section-heading">
+
+        <div>
+
+            <span>
+                COLECCIÓN STYLESTEP
+            </span>
+
+            <h2>
+
+                Nuestros
+
+                <strong>
+                    productos
+                </strong>
+
+            </h2>
+
+            <!-- Aquí JavaScript mostrará la categoría -->
+
+            <p id="categoriaActual">
+
+                Mostrando todos los productos
+
+            </p>
+
+        </div>
+
+        <div class="catalog-tools">
+
+            <!-- BUSCADOR -->
+
+            <div class="search-box">
+
+                <span>
+                    🔎
+                </span>
+
+                <input
+                    type="text"
+                    id="buscador"
+                    placeholder="Buscar zapatos..."
+                    onkeyup="buscarProducto()"
+                >
+
+            </div>
+
+            <!-- SELECT CATEGORÍAS -->
+
+            <select
+                id="filtroCategoria"
+                onchange="filtrarProductos()">
+                <option value="Todos">
+                    Todas las categorías
+                </option>
+
+
+                <option value="Dama">
+                    Dama
+                </option>
+
+                <option value="Caballero">
+                    Caballero
+                </option>
+
+
+                <option value="Juvenil">
+                    Juvenil
+                </option>
+
+                <option value="Niños">
+                    Niños
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+    -->
+
+    <div
+        class="products-grid"
+        id="productos">
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     PROMOCIONES
+===================================================== -->
+
+<section
+    class="promo-section"
+    id="promociones">
+
+
+    <div class="promo-content">
+
+        <span>
+            🔥 OFERTA ESPECIAL
+        </span>
+
+        <h2>
+
+            Tu primer paso
+
+            <strong>
+                tiene descuento
+            </strong>
+
+        </h2>
+
+        <p>
+
+            Obtén un
+
+            <b>
+                10% de descuento
+            </b>
+
+            en tu primera compra utilizando
+            nuestro código especial.
+
+        </p>
+
+        <div class="promo-code">
+
+            STYLE10
+
+        </div>
+
+        <button
+            class="btn-white"
+            onclick="copiarCodigo()">
+
+            Copiar código
+
+        </button>
+
+    </div>
+
+
+    <div class="promo-shape">
+
+        👟
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     BENEFICIOS
+===================================================== -->
+
+<section class="beneficios">
+
+    <div class="beneficio">
+
+        <span>
+            🚚
+        </span>
+
+        <div>
+
+            <h3>
+                Envíos
+            </h3>
+
+            <p>
+                Recibe tus productos de forma
+                cómoda y segura.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="beneficio">
+
+        <span>
+            🔒
+        </span>
+
+        <div>
+
+            <h3>
+                Compra segura
+            </h3>
+
+            <p>
+                Protección de información
+                durante tu compra.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="beneficio">
+
+        <span>
+            💳
+        </span>
+
+        <div>
+
+            <h3>
+                Diferentes pagos
+            </h3>
+
+            <p>
+                Tarjeta, transferencia y
+                medios digitales.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="beneficio">
+
+        <span>
+            📦
+        </span>
+
+        <div>
+
+            <h3>
+                Stock actualizado
+            </h3>
+
+            <p>
+                Consulta la disponibilidad
+                de nuestros productos.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =====================================================
+     NOSOTROS
+===================================================== -->
+<section
+    class="about-section"
+    id="nosotros">
+
+    <div class="about-image">
+
+        <div class="about-circle">
+
+            👟
+
+        </div>
+
+    </div>
+
+    <div class="about-content">
+
+        <span>
+            CONOCE STYLESTEP
+        </span>
+
+        <h2>
+
+            Más que zapatos,
+
+            <strong>
+                tu propio estilo.
+            </strong>
+
+        </h2>
+
+        <p>
+
+            STYLESTEP es una propuesta de comercio digital
+            enfocada en ofrecer diferentes opciones de
+            calzado mediante una plataforma moderna,
+            sencilla y accesible.
+
+        </p>
+        <p>
+
+            Nuestro objetivo es facilitar la búsqueda de
+            productos permitiendo consultar modelos,
+            categorías, precios y disponibilidad antes
+            de realizar una compra.
+
+        </p>
+
+        <div class="about-features">
+
+           <div>
+
+                <span>
+                    ✓
+                </span>
+
+                <p>
+
+                    <strong>
+                        Catálogo variado
+                    </strong>
+
+                    Productos para dama, caballero,
+                    jóvenes y niños.
+
+                </p>
+
+            </div>
+
+            <div>
+
+                <span>
+                    ✓
+                </span>
+
+                <p>
+
+                    <strong>
+                        Compra sencilla
+                    </strong>
+
+                    Encuentra y agrega tus productos
+                    favoritos al carrito.
+
+                </p>
+
+            </div>
+            <div>
+
+                <span>
+                    ✓
+                </span>
+
+                <p>
+
+                    <strong>
+                        Experiencia digital
+                    </strong>
+
+                    Consulta STYLESTEP desde computadora,
+                    tablet o celular.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =====================================================
+     NEWSLETTER
+===================================================== -->
+
+<section class="newsletter">
+
+    <div>
+
+        <span>
+            📩 MANTENTE AL DÍA
+        </span>
+
+        <h2>
+            Recibe nuestras novedades
+        </h2>
+
+
+        <p>
+
+            Entérate de nuevos modelos,
+            promociones y descuentos.
+
+        </p>
+
+    </div>
+
+    <form
+        onsubmit="suscribirse(event)">
+
+        <input
+            type="email"
+            id="correoNewsletter"
+            placeholder="Tu correo electrónico"
+            required
+        >
+        <button type="submit">
+
+            Registate 
+
+        </button>
+
+    </form>
+
+</section>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer id="contacto">
+
+    <div class="footer-main">
+
+        <!-- MARCA -->
+
+        <div class="footer-brand">
+
+            <div class="logo footer-logo">
+
+                <span class="logo-icon">
+                    👟
+                </span>
+
+                <div>
+
+                    <h1>
+                        STYLE<span>STEP</span>
+                    </h1>
+
+                    <small>
+                        TU ESTILO, TUS PASOS
+                    </small>
+
+                </div>
+
+            </div>
+            <p>
+
+                Tu tienda de calzado en línea.
+                Encuentra diferentes estilos para
+                cada paso de tu día.
+
+            </p>
+            <div class="socials">
+
+                <a href="#" title="Facebook">
+                    f
+                </a>
+
+                <a href="#" title="Instagram">
+                    ◎
+                </a>
+
+                <a href="#" title="TikTok">
+                    ♪
+                </a>
+
+            </div>
+        </div>
+        <!-- COMPRAR -->
+
+        <div class="footer-column">
+
+            <h3>
+                Comprar
+            </h3>
+
+            <a
+                href="#catalogo"
+                onclick="filtrarCategoria('Todos')">
+
+                Catálogo
+
+            </a>
+
+            <a
+                href="#catalogo"
+                onclick="filtrarCategoria('Dama')">
+
+                Dama
+
+            </a>
+            <a
+                href="#catalogo"
+                onclick="filtrarCategoria('Caballero')">
+
+                Caballero
+
+            </a>
+            <a
+                href="#catalogo"
+                onclick="filtrarCategoria('Juvenil')">
+
+                Juvenil
+
+            </a>
+            <a
+                href="#catalogo"
+                onclick="filtrarCategoria('Niños')">
+
+                Niños
+
+            </a>
+
+        </div>
+
+        <!-- AYUDA -->
+
+        <div class="footer-column">
+
+            <h3>
+                Ayuda
+            </h3>
+
+            <a href="#">
+                Preguntas frecuentes
+            </a>
+
+            <a href="#">
+                Métodos de pago
+            </a>
+
+            <a href="#">
+                Envíos
+            </a>
+
+            <a href="#">
+                Cambios y devoluciones
+            </a>
+
+        </div>
+        <!-- CONTACTO -->
+
+        <div class="footer-column">
+
+            <h3>
+                Contacto
+            </h3>
+
+            <p>
+                📍 Estado de México
+            </p>
+
+            <p>
+                📞 712 000 0000
+            </p>
+
+            <p>
+                ✉️ contacto@stylestep.com
+            </p>
+
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+
+            © 2026 STYLESTEP.
+            Todos los derechos reservados.
+
+        </p>
+
+        <p>
+
+            Proyecto de Plataformas
+            de Comercio Digital
+
+        </p>
+
+    </div>
+
+
+</footer>
+<!-- =====================================================
+     FONDO OSCURO DEL CARRITO
+===================================================== -->
+<div
+    class="overlay"
+    id="overlay"
+    onclick="cerrarCarrito()">
+
+</div>
+<aside
+    class="cart-sidebar"
+    id="cartSidebar">
+
+
+    <div class="cart-header">
+        <div>
+
+            <span>
+                🛒
+            </span>
+
+            <h2>
+                Mi carrito
+            </h2>
+
+        </div>
+
+
+        <button
+            onclick="cerrarCarrito()">
+
+            ×
+
+        </button>
+    </div>
+
+    <div
+        class="cart-items"
+        id="cartItems">
+
+        <div class="empty-cart">
+
+            <span>
+                🛒
+            </span>
+
+            <h3>
+                Tu carrito está vacío
+            </h3>
+
+            <p>
+                Agrega algunos productos para comenzar.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="cart-footer">
+        <div class="cart-total">
+
+            <span>
+                Total
+            </span>
+
+            <strong id="cartTotal">
+                $0.00
+            </strong>
+
+        </div>
+        <button
+            class="checkout-btn"
+            onclick="finalizarCompra()">
+
+            Continuar compra →
+
+        </button>
+    </div>
+</aside>
+<!-- =====================================================
+     MODAL CUENTA
+===================================================== -->
+<div class="modal" id="modalCuenta">
+  <div class="modal-content cuenta-modal">
+    <button class="modal-close" onclick="cerrarCuenta()" aria-label="Cerrar">×</button>
+    <div class="modal-icon">👤</div>
+    <h2>Mi cuenta</h2>
+    <p id="cuentaDescripcion">Crea tu cuenta o inicia sesión para consultar tus compras.</p>
+
+    <div id="cuentaAcceso">
+      <div class="cuenta-tabs">
+        <button type="button" class="cuenta-tab active" id="tabLogin" onclick="mostrarFormularioCuenta('login')">Iniciar sesión</button>
+        <button type="button" class="cuenta-tab" id="tabRegistro" onclick="mostrarFormularioCuenta('registro')">Crear cuenta</button>
+      </div>
+      <form id="formLogin" class="cuenta-form" onsubmit="iniciarSesion(event)">
+        <input id="loginCorreo" type="email" placeholder="Correo electrónico" autocomplete="email" required>
+        <input id="loginPassword" type="password" placeholder="Contraseña" autocomplete="current-password" required>
+        <button class="btn-primary full" type="submit">Iniciar sesión</button>
+      </form>
+      <form id="formRegistro" class="cuenta-form" hidden onsubmit="registrarCuenta(event)">
+        <input id="registroNombre" type="text" placeholder="Nombre completo" autocomplete="name" required minlength="2">
+        <input id="registroCorreo" type="email" placeholder="Correo electrónico" autocomplete="email" required>
+        <input id="registroPassword" type="password" placeholder="Crea una contraseña (mínimo 6 caracteres)" autocomplete="new-password" required minlength="6">
+        <input id="registroPasswordConfirmar" type="password" placeholder="Confirma tu contraseña" autocomplete="new-password" required minlength="6">
+        <button class="btn-primary full" type="submit">Crear mi cuenta</button>
+      </form>
+      <p id="mensajeCuenta" class="mensaje-cuenta" role="status" aria-live="polite"></p>
+    </div>
+
+    <section id="cuentaPerfil" hidden>
+      <div class="cuenta-bienvenida"><span>✓</span><div><strong id="perfilNombre"></strong><small id="perfilCorreo"></small></div></div>
+      <div class="cuenta-perfil-acciones"><button type="button" class="btn-primary" onclick="cerrarSesion()">Cerrar sesión</button></div>
+      <h3>Mis pedidos</h3>
+      <div id="listaPedidosCuenta" class="lista-pedidos-cuenta"></div>
+    </section>
+  </div>
+</div>
+<!-- =====================================================
+     CHECKOUT / FINALIZAR COMPRA
+===================================================== -->
+<div class="modal-checkout" id="modalCheckout">
+
+    <div class="checkout-container">
+
+        <!-- CERRAR -->
+        <button
+            type="button"
+            class="checkout-cerrar"
+            onclick="cerrarCheckout()">
+            &times;
+        </button>
+        <!-- ENCABEZADO -->
+        <div class="checkout-header">
+
+            <span class="checkout-marca">
+                👟 STYLESTEP
+            </span>
+
+            <h2>
+                Finalizar compra
+            </h2>
+
+            <p>
+                Completa tus datos para registrar tu pedido.
+            </p>
+
+        </div>
+
+        <!-- CONTENIDO -->
+        <div class="checkout-grid">
+
+            <!-- ==========================
+                 COLUMNA IZQUIERDA
+            =========================== -->
+
+            <div class="checkout-formulario">
+
+                <h3>
+                    1. Datos del cliente
+                </h3>
+                <div class="campo-doble">
+
+                    <div class="campo">
+
+                        <label for="checkoutNombre">
+                            Nombre *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="checkoutNombre"
+                            placeholder="Tu nombre">
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="checkoutApellidos">
+                            Apellidos *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="checkoutApellidos"
+                            placeholder="Tus apellidos">
+
+                    </div>
+
+                </div>
+                <div class="campo">
+
+                    <label for="checkoutCorreo">
+                        Correo electrónico *
+                    </label>
+
+                    <input
+                        type="email"
+                        id="checkoutCorreo"
+                        placeholder="correo@ejemplo.com">
+
+                </div>
+
+                <div class="campo">
+
+                    <label for="checkoutTelefono">
+                        Teléfono *
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="checkoutTelefono"
+                        placeholder="712 000 0000">
+
+                </div>
+
+                <!-- ==========================
+                     DATOS DE ENVÍO
+                =========================== -->
+
+                <h3>
+                    2. Datos de envío
+                </h3>
+
+                <div class="campo">
+
+                    <label for="checkoutDireccion">
+                        Dirección *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="checkoutDireccion"
+                        placeholder="Calle, número y colonia">
+
+                </div>
+
+                <div class="campo-doble">
+
+                    <div class="campo">
+
+                        <label for="checkoutMunicipio">
+                            Municipio *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="checkoutMunicipio"
+                            placeholder="Municipio">
+
+                    </div>
+
+                    <div class="campo">
+
+                        <label for="checkoutCP">
+                            Código postal *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="checkoutCP"
+                            maxlength="5"
+                            placeholder="00000">
+
+                    </div>
+
+                </div>
+
+                <!-- ==========================
+                     MÉTODOS DE PAGO
+                =========================== -->
+
+                <h3>
+                    3. Método de pago
+                </h3>
+
+                <!-- TARJETA -->
+
+                <label class="metodo-pago">
+
+                    <input
+                        type="radio"
+                        name="metodoPago"
+                        value="Tarjeta"
+                        checked>
+
+                    <div class="metodo-info">
+
+                        <span class="metodo-icono">
+                            💳
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Tarjeta
+                            </strong>
+
+                            <small>
+                                Crédito o débito
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </label>
+
+                <!-- TRANSFERENCIA -->
+
+                <label class="metodo-pago">
+
+                    <input
+                        type="radio"
+                        name="metodoPago"
+                        value="Transferencia">
+
+                    <div class="metodo-info">
+
+                        <span class="metodo-icono">
+                            🏦
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Transferencia
+                            </strong>
+
+                            <small>
+                                Transferencia bancaria
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </label>
+
+
+
+                <!-- CONTRA ENTREGA -->
+
+                <label class="metodo-pago">
+
+                    <input
+                        type="radio"
+                        name="metodoPago"
+                        value="Contra entrega">
+
+                    <div class="metodo-info">
+
+                        <span class="metodo-icono">
+                            💵
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Contra entrega
+                            </strong>
+
+                            <small>
+                                Paga al recibir tu pedido
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </label>
+
+
+
+                <!-- SEGURIDAD -->
+
+                <div class="aviso-seguridad">
+
+                    🔒
+
+                    <div>
+
+                        <strong>
+                            Compra segura
+                        </strong>
+
+                        <p>
+                            Esta es una demostración académica.
+                            STYLESTEP no solicita ni almacena
+                            datos bancarios reales.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ==========================
+                 COLUMNA DERECHA
+            =========================== -->
+
+            <div class="checkout-resumen">
+
+                <h3>
+                    Resumen del pedido
+                </h3>
+
+
+                <!-- PRODUCTOS DEL CARRITO -->
+
+                <div id="checkoutProductos">
+
+                </div>
+
+
+
+                <!-- CUPÓN -->
+
+                <div class="cupon-checkout">
+
+                    <label for="checkoutCupon">
+                        Código promocional
+                    </label>
+
+
+                    <div class="cupon-input">
+
+                        <input
+                            type="text"
+                            id="checkoutCupon"
+                            placeholder="Ej. STYLE10">
+
+                        <button
+                            type="button"
+                            onclick="aplicarCupon()">
+
+                            Aplicar
+
+                        </button>
+
+                    </div>
+
+
+                    <small id="mensajeCupon">
+
+                    </small>
+
+                </div>
+
+
+
+                <!-- TOTALES -->
+
+                <div class="checkout-totales">
+
+                    <p>
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <strong id="checkoutSubtotal">
+                            $0.00
+                        </strong>
+
+                    </p>
+
+
+                    <p>
+
+                        <span>
+                            Envío
+                        </span>
+
+                        <strong id="checkoutEnvio">
+                            $99.00
+                        </strong>
+
+                    </p>
+
+
+                    <p
+                        id="filaDescuento"
+                        style="display:none;">
+
+                        <span>
+                            Descuento STYLE10
+                        </span>
+
+                        <strong id="checkoutDescuento">
+                            -$0.00
+                        </strong>
+
+                    </p>
+
+
+                    <hr>
+
+
+                    <p class="checkout-total-final">
+
+                        <span>
+                            Total
+                        </span>
+
+                        <strong id="checkoutTotal">
+                            $0.00
+                        </strong>
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- CONFIRMAR -->
+
+                <button
+                    type="button"
+                    class="btn-confirmar-pedido"
+                    onclick="confirmarPedido()">
+
+                    🔒 Confirmar pedido
+
+                </button>
+
+
+                <p class="checkout-terminos">
+
+                    Al confirmar aceptas los términos y
+                    condiciones de STYLESTEP.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =====================================================
+     COMPRA EXITOSA
+===================================================== -->
+
+<div class="modal-compra-exitosa" id="modalCompraExitosa">
+
+    <div class="compra-exitosa">
+
+        <div class="check-exitoso">
+            ✓
+        </div>
+
+        <h2>¡Pedido confirmado!</h2>
+
+        <p>
+            Gracias por comprar en
+            <strong>STYLESTEP</strong>.
+        </p>
+
+        <div class="numero-pedido">
+            Pedido
+            <strong id="numeroPedido">
+                #ST0000
+            </strong>
+        </div>
+
+        <p>
+            Hemos registrado correctamente tu compra.
+        </p>
+
+        <button onclick="window.location.href='seguimiento.html'">
+            Ver seguimiento de mi compra
+        </button>
+
+        <button onclick="cerrarCompraExitosa()">
+            Seguir comprando
+        </button>
+
+    </div>
+
+</div>
+<script src="./script.js?v=102"></script>
+
+
+</body>
+
+</html>

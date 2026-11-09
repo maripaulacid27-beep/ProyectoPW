@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seguimiento de compra | STYLESTEP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="seguimiento.css">
+</head>
+<body class="tracking-body">
+  <header class="tracking-header">
+    <a class="tracking-logo" href="index.html">STYLE<span>STEP</span></a>
+    <a class="tracking-back" href="index.html">← Volver a la tienda</a>
+  </header>
+
+  <main class="tracking-main">
+    <section class="tracking-intro">
+      <span class="tracking-kicker">STYLESTEP · TU ESTILO, TUS PASOS</span>
+      <h1>Seguimiento de <span>mi compra</span></h1>
+      <p>Consulta el resumen de tu pedido y conoce el tiempo estimado de entrega.</p>
+    </section>
+
+    <section class="tracking-search">
+      <h2>Localiza tu pedido</h2>
+      <p>Escribe el número de pedido y el correo que registraste al comprar.</p>
+      <form id="formSeguimiento">
+        <label for="numeroPedido">Número de pedido</label>
+        <input id="numeroPedido" type="text" placeholder="Ej. ST123456" required>
+        <label for="correoPedido">Correo electrónico</label>
+        <input id="correoPedido" type="email" placeholder="correo@ejemplo.com" required>
+        <button type="submit">Consultar compra</button>
+      </form>
+      <p class="tracking-hint" id="mensajeBusqueda" role="status"></p>
+    </section>
+
+    <section id="resultadoPedido" class="tracking-result" hidden>
+      <div class="tracking-order-head">
+        <div><span class="muted-label">NÚMERO DE PEDIDO</span><h2 id="pedidoNumero"></h2></div>
+        <span id="estadoEtiqueta" class="status-pill">Registrado</span>
+      </div>
+
+      <div class="tracking-delivery">
+        <div class="delivery-icon">📦</div>
+        <div><span class="muted-label">ENTREGA ESTIMADA</span><strong id="fechaEntrega"></strong><p id="tiempoRestante"></p></div>
+      </div>
+
+      <div class="tracking-timeline">
+        <div class="timeline-step active"><span>✓</span><div><strong>Pedido registrado</strong><small>Recibimos tu compra correctamente.</small></div></div>
+        <div class="timeline-step"><span>2</span><div><strong>Preparando pedido</strong><small>Estamos preparando tus productos.</small></div></div>
+        <div class="timeline-step"><span>3</span><div><strong>En camino</strong><small>Tu pedido salió para entrega.</small></div></div>
+        <div class="timeline-step"><span>4</span><div><strong>Entregado</strong><small>¡Disfruta tu compra!</small></div></div>
+      </div>
+
+      <div class="tracking-columns">
+        <div class="tracking-panel">
+          <h3>Productos de tu compra</h3>
+          <div id="listaProductos"></div>
+        </div>
+        <div class="tracking-panel">
+          <h3>Resumen del pedido</h3>
+          <div class="tracking-customer" id="datosCliente"></div>
+          <div class="price-line"><span>Subtotal</span><strong id="resumenSubtotal"></strong></div>
+          <div class="price-line"><span>Envío</span><strong id="resumenEnvio"></strong></div>
+          <div class="price-line"><span>Descuento</span><strong id="resumenDescuento"></strong></div>
+          <div class="price-line total-line"><span>Total pagado</span><strong id="resumenTotal"></strong></div>
+        </div>
+      </div>
+      <p class="tracking-disclaimer">El plazo mostrado es estimado y puede variar. Para esta versión de demostración, el seguimiento se guarda en el navegador donde se realizó la compra.</p>
+    </section>
+  </main>
+  <script src="seguimiento.js"></script>
+</body>
+</html>

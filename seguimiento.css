@@ -1,0 +1,52 @@
+/* Seguimiento de pedidos STYLESTEP */
+.tracking-body{min-height:100vh;background:linear-gradient(180deg,#fff 0%,#f8f5fc 100%);color:#45415d}
+.tracking-header{display:flex;justify-content:space-between;align-items:center;padding:20px 8%;background:#fff;border-bottom:1px solid #eee5f5}
+.tracking-logo{font-size:23px;font-weight:800;color:#292548;letter-spacing:1px}
+.tracking-logo span,.tracking-intro h1 span{color:#7071bc}
+.tracking-back{font-size:13px;font-weight:600;color:#7071bc}
+.tracking-main{width:min(1050px,90%);margin:48px auto 80px}
+.tracking-intro{text-align:center;margin-bottom:30px}
+.tracking-kicker,.muted-label{font-size:10px;font-weight:800;letter-spacing:1.7px;color:#8b78bd}
+.tracking-intro h1{font-size:clamp(30px,5vw,43px);color:#292548;margin:10px 0}
+.tracking-intro p,.tracking-search p{color:#777187;font-size:14px}
+.tracking-search,.tracking-result,.tracking-panel{background:#fff;border:1px solid #eee7f5;border-radius:20px;box-shadow:0 12px 35px rgba(60,50,130,.08)}
+.tracking-search{max-width:570px;margin:0 auto;padding:28px}
+.tracking-search h2{font-size:21px;color:#292548;margin-bottom:5px}
+.tracking-search form{display:grid;gap:9px;margin-top:20px}
+.tracking-search label{font-size:12px;font-weight:600;color:#45415d;margin-top:5px}
+.tracking-search input{width:100%;padding:13px 14px;border:1px solid #e5dced;border-radius:11px;outline:none}
+.tracking-search input:focus{border-color:#7071bc;box-shadow:0 0 0 3px #7071bc20}
+.tracking-search button{border:0;border-radius:12px;padding:14px;color:#fff;font-weight:700;background:linear-gradient(135deg,#a480d5,#4b79d1);margin-top:8px}
+.tracking-hint{min-height:18px;margin-top:12px;font-size:12px;color:#b34b70}
+.tracking-result{margin-top:28px;padding:28px}
+.tracking-order-head{display:flex;align-items:center;justify-content:space-between;gap:15px;padding-bottom:20px;border-bottom:1px solid #eee7f5}
+.tracking-order-head h2{font-size:24px;color:#292548;margin-top:4px}
+.status-pill{background:#f0eafa;color:#7053a7;border-radius:30px;padding:8px 14px;font-size:11px;font-weight:700}
+.tracking-delivery{display:flex;align-items:center;gap:15px;padding:22px 0}
+.delivery-icon{width:55px;height:55px;display:grid;place-items:center;background:#f4effb;border-radius:16px;font-size:26px}
+.tracking-delivery strong{display:block;color:#292548;font-size:18px;margin-top:4px}
+.tracking-delivery p{font-size:12px;color:#777187;margin-top:3px}
+.tracking-timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:12px 0 28px}
+.timeline-step{display:flex;align-items:flex-start;gap:9px;color:#aaa}
+.timeline-step>span{flex:0 0 27px;height:27px;border-radius:50%;display:grid;place-items:center;background:#eeeaf3;font-size:12px;font-weight:700}
+.timeline-step.active{color:#7071bc}
+.timeline-step.active>span{background:#7071bc;color:white}
+.timeline-step strong,.timeline-step small{display:block}
+.timeline-step strong{font-size:11px;color:#39334f;margin:3px 0}
+.timeline-step small{font-size:10px;line-height:1.5}
+.tracking-columns{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+.tracking-panel{padding:20px;box-shadow:none}
+.tracking-panel h3{font-size:16px;color:#292548;margin-bottom:16px}
+.tracking-product{display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid #f0ebf5}
+.tracking-product img{width:58px;height:58px;object-fit:cover;border-radius:10px;background:#f6f2fa}
+.tracking-product div{flex:1}
+.tracking-product strong{display:block;font-size:12px;color:#292548}
+.tracking-product small{font-size:11px;color:#817b91}
+.tracking-product b{font-size:12px;color:#7071bc}
+.tracking-customer{font-size:11px;line-height:1.8;color:#777187;padding-bottom:12px;margin-bottom:8px;border-bottom:1px solid #eee7f5}
+.price-line{display:flex;justify-content:space-between;gap:10px;padding:7px 0;font-size:12px;color:#777187}
+.price-line strong{color:#45415d}
+.total-line{border-top:1px solid #eee7f5;margin-top:7px;padding-top:13px;font-size:14px;font-weight:700;color:#292548}
+.total-line strong{color:#7071bc;font-size:17px}
+.tracking-disclaimer{font-size:11px;color:#888196;line-height:1.6;margin-top:18px}
+@media(max-width:700px){.tracking-header{padding:16px 5%}.tracking-main{margin-top:30px}.tracking-result{padding:18px}.tracking-timeline{grid-template-columns:1fr 1fr}.tracking-columns{grid-template-columns:1fr}.tracking-search{padding:21px}}

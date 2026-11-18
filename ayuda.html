@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Centro de ayuda de STYLESTEP: preguntas frecuentes, pagos, envíos, cambios y devoluciones.">
+<title>Centro de ayuda | STYLESTEP</title>
+<style>
+:root{--ink:#241d2c;--purple:#7045a0;--pale:#f7f4fa;--line:#e8e1ed;--muted:#716879}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:#fbfafd;color:var(--ink);font-family:Arial,sans-serif;line-height:1.6}
+header{background:#21192b;color:white;padding:18px max(5%,calc((100% - 1100px)/2));display:flex;justify-content:space-between;align-items:center;gap:16px}
+.brand{font-size:23px;font-weight:800;letter-spacing:2px}.brand span{color:#c8a7ed}header a{color:white;text-decoration:none;border:1px solid #ffffff55;border-radius:9px;padding:9px 14px}
+.hero{background:linear-gradient(120deg,#2b2037,#69469a);color:white;padding:56px 20px;text-align:center}.hero h1{font-size:clamp(30px,5vw,44px);margin:0 0 8px}.hero p{margin:0;color:#eee5f7}
+main{max-width:1050px;margin:32px auto;padding:0 18px}.quick{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:28px}
+.quick a{background:white;border:1px solid var(--line);border-radius:13px;padding:17px 12px;text-decoration:none;color:var(--ink);font-weight:700;text-align:center;box-shadow:0 5px 18px #30203a08}.quick a span{display:block;font-size:25px;margin-bottom:7px}
+section{background:white;border:1px solid var(--line);border-radius:16px;padding:26px;margin:20px 0;box-shadow:0 8px 28px #30203a08}
+h2{margin:0 0 8px;font-size:24px}h3{font-size:17px;margin:0 0 7px}.intro{color:var(--muted);margin:0 0 18px}
+details{border-top:1px solid var(--line);padding:15px 0}details:last-child{padding-bottom:0}summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}summary::-webkit-details-marker{display:none}summary:after{content:"＋";color:var(--purple);font-size:19px}details[open] summary:after{content:"−"}details p{margin:10px 0 0;color:#51495a}
+.payments{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.payment{background:var(--pale);padding:17px;border-radius:12px}.payment b{display:block;margin:7px 0}.emoji{font-size:25px}
+.notice{background:#f5effa;border-left:4px solid var(--purple);padding:13px 15px;border-radius:8px;margin-top:16px;color:#4c3b5c}
+ul{padding-left:22px;color:#51495a}.contact{background:#21192b;color:white;text-align:center}.contact p{color:#eee5f7}.contact a{color:white;font-weight:700}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:24px}
+@media(max-width:720px){.quick{grid-template-columns:repeat(2,1fr)}.payments{grid-template-columns:1fr}section{padding:20px}.hero{padding:42px 18px}}
+</style>
+    <link rel="stylesheet" href="tema-nocturno.css">
+</head>
+<body>
+<header><a class="brand" href="index.html">STYLE<span>STEP</span></a><a href="index.html">← Volver a la tienda</a></header>
+<div class="hero"><h1>Centro de ayuda</h1><p>Estamos aquí para acompañarte en cada paso de tu compra.</p></div>
+<main>
+<nav class="quick" aria-label="Temas de ayuda">
+<a href="#preguntas-frecuentes"><span>❔</span>Preguntas frecuentes</a>
+<a href="#metodos-de-pago"><span>💳</span>Métodos de pago</a>
+<a href="#envios"><span>📦</span>Envíos</a>
+<a href="#cambios-devoluciones"><span>🔄</span>Cambios y devoluciones</a>
+</nav>
+
+<section id="preguntas-frecuentes">
+<h2>Preguntas frecuentes</h2><p class="intro">Respuestas rápidas a las dudas más comunes.</p>
+<details><summary>¿Cómo puedo realizar una compra?</summary><p>Explora el catálogo, elige tus productos y agrégalos al carrito. Después selecciona “Continuar compra”, completa tus datos de entrega y confirma el pedido. Al finalizar verás la confirmación y el número de pedido.</p></details>
+<details><summary>¿Cómo puedo consultar el estado de mi pedido?</summary><p>Entra a la opción de seguimiento de la tienda e ingresa el número de pedido que aparece en la confirmación de compra. Si creaste una cuenta, también puedes consultar tus compras desde “Mi cuenta”.</p></details>
+<details><summary>¿Puedo cancelar un pedido?</summary><p>La cancelación está disponible desde “Mi cuenta” mientras el pedido conserve el estado “Registrado”. Si ya está en preparación o envío, comunícate con atención al cliente para revisar las opciones disponibles.</p></details>
+<details><summary>¿Necesito crear una cuenta para comprar?</summary><p>Consulta las opciones disponibles en la tienda. Crear una cuenta te permite revisar tus datos y consultar el historial de pedidos asociado a tu correo.</p></details>
+<details><summary>¿Qué hago si recibí un producto incorrecto o dañado?</summary><p>Escríbenos a contacto@stylestep.com con tu número de pedido, una descripción del problema y fotografías del producto y su empaque. No envíes datos bancarios ni contraseñas.</p></details>
+</section>
+
+<section id="metodos-de-pago">
+<h2>Métodos de pago</h2><p class="intro">La tienda muestra las siguientes alternativas durante el proceso de compra:</p>
+<div class="payments">
+<div class="payment"><span class="emoji">💵</span><b>Pago contra entrega</b><p>Realiza el pago al recibir tu pedido. Confirma que esta opción esté disponible para tu zona al finalizar la compra.</p></div>
+<div class="payment"><span class="emoji">💳</span><b>Tarjeta</b><p>Si esta alternativa está habilitada en el checkout, sigue las instrucciones del proveedor de pago para completar la operación.</p></div>
+<div class="payment"><span class="emoji">🏦</span><b>Transferencia</b><p>Si se ofrece esta opción, utiliza únicamente los datos de pago oficiales que se muestren durante la compra.</p></div>
+</div>
+<div class="notice">Aviso: STYLESTEP es una demostración académica. El checkout actual indica que no solicita ni almacena datos bancarios reales. No compartas números de tarjeta, NIP ni contraseñas por correo o mensajería.</div>
+</section>
+
+<section id="envios">
+<h2>Envíos</h2><p class="intro">Información para que sepas qué esperar después de confirmar tu compra.</p>
+<ul>
+<li><b>Dirección:</b> revisa que tu nombre, teléfono, calle, número, colonia, código postal y referencias estén completos antes de confirmar.</li>
+<li><b>Costo:</b> el checkout de la tienda muestra un costo de envío de $99 MXN. Confirma el importe final en el resumen antes de pagar.</li>
+<li><b>Seguimiento:</b> conserva tu número de pedido para consultar el avance en la sección “Seguimiento”.</li>
+<li><b>Entrega:</b> procura que haya una persona disponible para recibir el paquete y verificar su estado al momento de la entrega.</li>
+<li><b>Problemas con la entrega:</b> si tu pedido presenta retraso o los datos de seguimiento no se actualizan, contáctanos indicando tu número de pedido.</li>
+</ul>
+<div class="notice">Los tiempos de entrega y la cobertura dependen de la operación logística de la tienda. Confirma estos plazos con STYLESTEP antes de publicar esta página como política comercial definitiva.</div>
+</section>
+
+<section id="cambios-devoluciones">
+<h2>Cambios y devoluciones</h2><p class="intro">Si necesitas cambiar o devolver un artículo, primero ponte en contacto con nuestro equipo.</p>
+<details open><summary>¿Cómo solicito un cambio o devolución?</summary><p>Envía un correo a contacto@stylestep.com con el asunto “Cambio o devolución”, tu número de pedido, el producto involucrado y el motivo de la solicitud. Adjunta fotografías si el artículo llegó dañado o no corresponde con tu compra.</p></details>
+<details><summary>¿En qué condiciones debe estar el producto?</summary><p>Como referencia, conserva el calzado sin uso, limpio, con etiquetas y en su caja o empaque original. El equipo de atención confirmará si cumple las condiciones aplicables antes de autorizar el proceso.</p></details>
+<details><summary>¿Qué sucede si el producto llegó defectuoso o equivocado?</summary><p>Repórtalo lo antes posible después de recibirlo. Incluye evidencia fotográfica y el número de pedido para que podamos revisar el caso y orientarte.</p></details>
+<details><summary>¿Cuándo recibiré un reembolso?</summary><p>Cuando una devolución sea aprobada, el equipo te informará el procedimiento y el plazo correspondiente según el método de pago utilizado. No se procesan reembolsos desde esta página de demostración.</p></details>
+<div class="notice">Antes de publicar: define y agrega aquí el plazo máximo para solicitar cambios, las condiciones de devolución, quién cubre el envío de retorno y los tiempos de reembolso. Esta información es una guía general, no sustituye las políticas comerciales definitivas ni los derechos que reconoce la legislación aplicable.</div>
+</section>
+
+<section class="contact" id="contacto"><h2>¿Necesitas más ayuda?</h2><p>Escríbenos y comparte tu número de pedido para que podamos orientarte.</p><p>✉️ <a href="mailto:contacto@stylestep.com">contacto@stylestep.com</a></p><p>📍 Estado de México · STYLESTEP</p></section>
+</main>
+<footer>© 2026 STYLESTEP. Todos los derechos reservados.</footer>
+    <script src="tema-nocturno.js"></script>
+</body></html>

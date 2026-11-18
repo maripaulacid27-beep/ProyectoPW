@@ -1,0 +1,34 @@
+STYLESTEP - PANEL DE ADMINISTRACIÓN
+
+ARCHIVOS NUEVOS
+- admin.php: acceso de administrador y gestión del catálogo (crear, editar y eliminar).
+- uploads/productos/: imágenes subidas desde el panel.
+- uploads/.htaccess: evita ejecutar scripts dentro de la carpeta de imágenes.
+
+CÓMO USARLO
+1. Sube el contenido de la carpeta zapateria a la misma carpeta pública de tu hosting donde está index.html.
+2. Conserva conexion.php y verifica que sus datos de conexión correspondan a tu base de datos.
+3. La base de datos debe tener la tabla `productos` con estas columnas:
+   id (INT, AUTO_INCREMENT, PRIMARY KEY), nombre (VARCHAR), categoria (VARCHAR),
+   precio (DECIMAL), stock (INT), imagen (TEXT o VARCHAR), descripcion (TEXT).
+   El proyecto original ya utiliza esa tabla mediante obtener_productos.php.
+4. Abre https://TU-DOMINIO/admin.php. La primera visita permite crear el primer administrador.
+   Usa un usuario de al menos 4 caracteres y una contraseña de al menos 10 caracteres.
+5. Después inicia sesión, añade productos y revisa la tienda en index.html.
+
+FUNCIONES
+- Alta, edición y eliminación de productos.
+- Categorías: Dama, Caballero, Juvenil y Niños.
+- Precio, existencias, descripción y fotografía.
+- Imágenes JPG, PNG o WEBP de hasta 5 MB, o URL de imagen.
+- El catálogo público consulta obtener_productos.php, por lo que los cambios guardados
+  en la base de datos aparecen en la tienda.
+
+IMPORTANTE
+- Cambia la contraseña de la base de datos si la versión anterior del proyecto se compartió
+  públicamente y actualiza conexion.php con la nueva clave.
+- Usa HTTPS en producción y contraseñas únicas y fuertes.
+- El servidor debe ejecutar PHP con mysqli, fileinfo y permitir escritura en uploads/productos.
+- El primer registro de administrador queda habilitado solo mientras no exista ningún
+  administrador. No borres la tabla administradores en producción.
+- Haz respaldo de la base de datos antes de operar sobre la tienda real.

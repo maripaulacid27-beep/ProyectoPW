@@ -8,7 +8,7 @@
    PRODUCTOS
 ========================================================== */
 
-const productos = [
+let productos = [
 
     /* ======================================================
        DAMA
@@ -1614,6 +1614,8 @@ function cancelarPedido(numero) {
    FINALIZAR COMPRA
 ========================================================== */
 let descuentoAplicado = false;
+let porcentajeDescuento = 0;
+let codigoCuponAplicado = "";
 
 const COSTO_ENVIO = 99;
 
@@ -1630,11 +1632,8 @@ function finalizarCompra() {
 
         return;
     }
-
     cerrarCarrito();
-
     cargarResumenCheckout();
-
     document
         .getElementById("modalCheckout")
         .classList.add("active");
@@ -1706,7 +1705,7 @@ function cargarResumenCheckout() {
     let descuento = 0;
 
     if (descuentoAplicado) {
-        descuento = subtotal * 0.10;
+        descuento = subtotal * (porcentajeDescuento / 100);
     }
 
 
@@ -1737,45 +1736,37 @@ function cargarResumenCheckout() {
 
 function aplicarCupon() {
 
-    const input =
-        document.getElementById("checkoutCupon");
+    const input = document.getElementById("checkoutCupon");
+    const mensaje = document.getElementById("mensajeCupon");
+    const codigo = input.value.trim().toUpperCase();
 
-    const mensaje =
-        document.getElementById("mensajeCupon");
+    const cupones = {
+        STYLE10: 10,
+        STYLE20: 20,
+        STYLE25: 25,
+        STYLE50: 50
+    };
 
-    const codigo =
-        input.value.trim().toUpperCase();
-
-
-    if (codigo === "STYLE10") {
-
+    if (Object.prototype.hasOwnProperty.call(cupones, codigo)) {
+        porcentajeDescuento = cupones[codigo];
+        codigoCuponAplicado = codigo;
         descuentoAplicado = true;
 
-        mensaje.textContent =
-            "✓ 10% de descuento aplicado.";
-
+        mensaje.textContent = `✓ Código ${codigo}: ${porcentajeDescuento}% de descuento aplicado.`;
         mensaje.className = "cupon-correcto";
-
-        document.getElementById("filaDescuento")
-            .style.display = "flex";
-
+        document.getElementById("filaDescuento").style.display = "flex";
     } else {
-
         descuentoAplicado = false;
+        porcentajeDescuento = 0;
+        codigoCuponAplicado = "";
 
-        mensaje.textContent =
-            "El código ingresado no es válido.";
-
+        mensaje.textContent = "El código ingresado no es válido. Prueba STYLE10, STYLE20, STYLE25 o STYLE50.";
         mensaje.className = "cupon-error";
-
-        document.getElementById("filaDescuento")
-            .style.display = "none";
+        document.getElementById("filaDescuento").style.display = "none";
     }
-
 
     cargarResumenCheckout();
 }
-
 
 /* =========================================
    VALIDAR DATOS
@@ -1917,7 +1908,7 @@ function confirmarPedido() {
     const subtotalPedido = carrito.reduce(
         (suma, item) => suma + (item.precio * item.cantidad), 0
     );
-    const descuentoPedido = descuentoAplicado ? subtotalPedido * 0.10 : 0;
+    const descuentoPedido = descuentoAplicado ? subtotalPedido * (porcentajeDescuento / 100) : 0;
     const totalPedido = subtotalPedido + COSTO_ENVIO - descuentoPedido;
     const fechaRegistro = new Date();
     const fechaEntrega = new Date(fechaRegistro);
@@ -1938,6 +1929,8 @@ function confirmarPedido() {
         subtotal: subtotalPedido,
         envio: COSTO_ENVIO,
         descuento: descuentoPedido,
+        codigoCupon: codigoCuponAplicado,
+        porcentajeDescuento: porcentajeDescuento,
         total: totalPedido,
         productos: carrito.map(item => ({
             id: item.id,
@@ -1961,6 +1954,8 @@ function confirmarPedido() {
     carrito = [];
 
     descuentoAplicado = false;
+    porcentajeDescuento = 0;
+    codigoCuponAplicado = "";
 
 
     actualizarCarrito();
@@ -2019,58 +2014,16 @@ function formatearDinero(cantidad) {
    CUPÓN
 ========================================================== */
 
-function copiarCodigo() {
+function copiarCodigo(codigo = "STYLE10") {
 
-
-    if (
-        navigator.clipboard
-    ) {
-
-
-        navigator.clipboard
-
-            .writeText(
-                "STYLE10"
-            )
-
-            .then(() => {
-
-
-                alert(
-
-                    "¡Código STYLE10 copiado! 🎉"
-
-                );
-
-            })
-
-            .catch(() => {
-
-
-                alert(
-
-                    "Tu código de descuento es: STYLE10"
-
-                );
-
-            });
-
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(codigo)
+            .then(() => alert(`¡Código ${codigo} copiado! 🎉`))
+            .catch(() => alert(`Tu código de descuento es: ${codigo}`));
+    } else {
+        alert(`Tu código de descuento es: ${codigo}`);
     }
-
-
-    else {
-
-
-        alert(
-
-            "Tu código de descuento es: STYLE10"
-
-        );
-
-    }
-
 }
-
 
 /* ==========================================================
    NEWSLETTER
@@ -2144,6 +2097,40 @@ window.addEventListener(
    INICIAR STYLESTEP
 ========================================================== */
 
+async function cargarProductosDesdeServidor() {
+
+    try {
+
+        const respuesta = await fetch("obtener_productos.php", {
+            cache: "no-store"
+        });
+
+        if (!respuesta.ok) throw new Error("No fue posible consultar el catálogo");
+
+        const datos = await respuesta.json();
+
+        if (Array.isArray(datos)) {
+            productos = datos.map(producto => ({
+                ...producto,
+                id: Number(producto.id),
+                precio: Number(producto.precio),
+                stock: Number(producto.stock)
+            }));
+        }
+
+    } catch (error) {
+        console.warn("Se utilizará el catálogo local de respaldo:", error);
+    }
+
+    mostrarProductos(productos);
+    actualizarTituloCategoria("Todos", productos.length);
+}
+
+
+/* ==========================================================
+   INICIAR STYLESTEP
+========================================================== */
+
 document.addEventListener(
 
     "DOMContentLoaded",
@@ -2151,11 +2138,9 @@ document.addEventListener(
     function() {
 
 
-        /* Mostrar catálogo */
+        /* Cargar catálogo desde la base de datos */
 
-        mostrarProductos(
-            productos
-        );
+        cargarProductosDesdeServidor();
 
 
         /* Contador favoritos */

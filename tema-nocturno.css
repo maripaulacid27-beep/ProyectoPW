@@ -1,0 +1,65 @@
+/* Modo nocturno compartido de STYLESTEP */
+body.dark-mode {
+    background: #171521 !important;
+    color: #e9e5f0 !important;
+    color-scheme: dark;
+}
+body.dark-mode :is(header, main, section, article, aside, nav, footer, .card,
+    .product-card, .cart-sidebar, .checkout-container, .checkout-resumen,
+    .tracking-search, .tracking-result, .quick a, .pedido-cuenta,
+    .compra-exitosa, .admin-card, .panel, .form-card, .table-wrap) {
+    background-color: #242132 !important;
+    color: #e9e5f0 !important;
+    border-color: #40394f !important;
+}
+body.dark-mode :is(h1,h2,h3,h4,h5,h6,strong,label, p, li, small, td, th, dt, dd) {
+    color: inherit;
+}
+body.dark-mode :is(a:not(.cart-btn), .menu a, .tracking-back) {
+    color: #d6c2f4;
+}
+body.dark-mode :is(input, select, textarea) {
+    background: #302b40 !important;
+    color: #f4f0fa !important;
+    border-color: #554b68 !important;
+}
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder { color: #b6adc3; }
+body.dark-mode :is(.cart-product, .checkout-producto, .numero-pedido,
+    .checkout-resumen, .tracking-order, .tracking-item, .pedido-cuenta,
+    .empty-cart, .cart-product-image) {
+    background-color: #302b40 !important;
+    color: #e9e5f0 !important;
+}
+body.dark-mode :is(.header, .tracking-header) {
+    background: rgba(31, 27, 43, .96) !important;
+    border-color: #40394f !important;
+}
+body.dark-mode .hero { filter: brightness(.78); }
+body.dark-mode footer { background-color: #171521 !important; color: #d4cddd !important; }
+body.dark-mode :is(table, tr, td, th) { border-color: #494158 !important; }
+body.dark-mode .tracking-body { background: #171521 !important; }
+#themeToggle {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 20000;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 17px;
+    border: 1px solid rgba(255,255,255,.22);
+    border-radius: 999px;
+    background: linear-gradient(135deg, #7071bc, #4b79d1);
+    color: #fff;
+    font: 600 13px/1.2 inherit;
+    font-family: inherit;
+    box-shadow: 0 8px 24px rgba(20, 15, 40, .25);
+    cursor: pointer;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+#themeToggle:hover { transform: translateY(-2px); box-shadow: 0 11px 28px rgba(20,15,40,.32); }
+#themeToggle:focus-visible { outline: 3px solid #e2a3d8; outline-offset: 3px; }
+@media (max-width: 550px) {
+    #themeToggle { right: 14px; bottom: 14px; padding: 11px 14px; }
+}

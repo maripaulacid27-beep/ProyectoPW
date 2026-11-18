@@ -18,6 +18,7 @@
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet"
     >
+    <link rel="stylesheet" href="tema-nocturno.css">
 </head>
 
 <body>
@@ -501,46 +502,39 @@
 
     <div class="promo-content">
 
-        <span>
-            🔥 OFERTA ESPECIAL
-        </span>
+        <span>🔥 OFERTA ESPECIAL</span>
 
         <h2>
-
             Tu primer paso
-
-            <strong>
-                tiene descuento
-            </strong>
-
+            <strong>tiene descuento</strong>
         </h2>
 
-        <p>
+        <p>Elige uno de nuestros códigos y aplícalo en tu compra.</p>
 
-            Obtén un
-
-            <b>
-                10% de descuento
-            </b>
-
-            en tu primera compra utilizando
-            nuestro código especial.
-
-        </p>
-
-        <div class="promo-code">
-
-            STYLE10
-
+        <div class="promo-codes">
+            <div class="promo-code-card">
+                <strong>10% OFF</strong>
+                <span class="promo-code">STYLE10</span>
+                <button class="btn-white" type="button" onclick="copiarCodigo('STYLE10')">Copiar código</button>
+            </div>
+            <div class="promo-code-card">
+                <strong>20% OFF</strong>
+                <span class="promo-code">STYLE20</span>
+                <button class="btn-white" type="button" onclick="copiarCodigo('STYLE20')">Copiar código</button>
+            </div>
+            <div class="promo-code-card">
+                <strong>25% OFF</strong>
+                <span class="promo-code">STYLE25</span>
+                <button class="btn-white" type="button" onclick="copiarCodigo('STYLE25')">Copiar código</button>
+            </div>
+            <div class="promo-code-card">
+                <strong>50% OFF</strong>
+                <span class="promo-code">STYLE50</span>
+                <button class="btn-white" type="button" onclick="copiarCodigo('STYLE50')">Copiar código</button>
+            </div>
         </div>
 
-        <button
-            class="btn-white"
-            onclick="copiarCodigo()">
-
-            Copiar código
-
-        </button>
+        <small class="promo-note">Un solo código por compra. El descuento se calcula sobre el subtotal de productos; el envío no se descuenta.</small>
 
     </div>
 
@@ -901,7 +895,6 @@
                 Niños
 
             </a>
-
         </div>
 
         <!-- AYUDA -->
@@ -912,19 +905,19 @@
                 Ayuda
             </h3>
 
-            <a href="#">
+            <a href="ayuda.html#preguntas-frecuentes">
                 Preguntas frecuentes
             </a>
 
-            <a href="#">
+            <a href="ayuda.html#metodos-de-pago">
                 Métodos de pago
             </a>
 
-            <a href="#">
+            <a href="ayuda.html#envios">
                 Envíos
             </a>
 
-            <a href="#">
+            <a href="ayuda.html#cambios-devoluciones">
                 Cambios y devoluciones
             </a>
 
@@ -955,7 +948,6 @@
     <div class="footer-bottom">
 
         <p>
-
             © 2026 STYLESTEP.
             Todos los derechos reservados.
 
@@ -1561,6 +1553,7 @@
 <script src="./script.js?v=102"></script>
 
 
+    <script src="tema-nocturno.js"></script>
 </body>
 
 </html>
